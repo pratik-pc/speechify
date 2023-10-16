@@ -19,12 +19,12 @@ class AudioRecorder():
 
   def start_recording(self):
     self.recording = True
-    self.main_window.start_stop_button.setText('Stop Recording')
+    self.main_window.button.setText('Stop Recording')
     self.record.start_stream()
 
   def stop_recording(self):
     self.recording = False
-    self.main_window.start_stop_button.setText('Start Recording')
+    self.main_window.button.setText('Start Recording')
     self.record.stream.stop_stream()
     self.record.stream.close()
 
