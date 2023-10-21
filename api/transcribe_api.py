@@ -13,6 +13,6 @@ def transcribe():
         data['audio'] = (audio_file.name, audio_file, 'audio/wav')
         print("Audio file opened successfully.")
         response = requests.post(url, files=data)
-        print(response.text)
+        return response.text
   except IOError as e:
       print(f"Failed to open the audio file: {str(e)}")

@@ -1,4 +1,7 @@
 from logic.record import Record
+from api.transcribe_api import transcribe
+from logic.speech import speech
+
 class AudioRecorder():
   def __init__(self, main_window):
     self.main_window = main_window
@@ -15,6 +18,8 @@ class AudioRecorder():
     else:
       self.stop_recording()
       print('stop')
+      text = self.call_api()
+      print(text)
 
 
   def start_recording(self):
@@ -29,3 +34,6 @@ class AudioRecorder():
     self.record.stream.close()
 
     self.record.save_audio()
+
+  def call_api(self):
+    return transcribe()
