@@ -19,7 +19,7 @@ class AudioRecorder():
       self.stop_recording()
       print('stop')
       text = self.call_api()
-      print(text)
+      speech(text)
 
 
   def start_recording(self):
