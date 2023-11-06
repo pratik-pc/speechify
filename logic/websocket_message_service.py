@@ -1,11 +1,13 @@
 import websockets
 import asyncio
 import json
+import sys
 
+translated_text = sys.argv[1]
 
 async def send_message(url):
   async with websockets.connect(url) as websocket:
-    await websocket.send(json.dumps({"message": 'hello i am pratik'}))
+    await websocket.send(json.dumps({"message": translated_text}))
     print('published message')
 
 
