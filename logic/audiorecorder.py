@@ -1,6 +1,7 @@
 from logic.record import Record
 from api.transcribe_api import transcribe
 from logic.speech import speech
+import subprocess
 
 class AudioRecorder():
   def __init__(self, main_window):
@@ -19,7 +20,7 @@ class AudioRecorder():
       self.stop_recording()
       print('stop')
       text = self.call_api()
-      speech(text)
+      subprocess.run(['python', 'logic\websocket_message_service.py'])
 
 
   def start_recording(self):
