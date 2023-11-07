@@ -8,6 +8,7 @@ class AudioRecorder():
     self.main_window = main_window
     self.recording = False
     self.record = Record(self)
+    self.language_code = 'hi-IN'
 
 
   def toggle_recording(self):
@@ -37,4 +38,4 @@ class AudioRecorder():
     self.record.save_audio()
 
   def call_api(self):
-    return transcribe()
+    return transcribe(self.language_code)
