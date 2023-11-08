@@ -3,7 +3,7 @@ import asyncio
 import json
 import sys
 
-translated_text = sys.argv[1]
+translated_text = sys.stdin.read()
 
 async def send_message(url):
   async with websockets.connect(url) as websocket:
