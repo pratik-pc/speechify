@@ -21,7 +21,8 @@ class AudioRecorder():
       self.stop_recording()
       print('stop')
       text = self.call_api()
-      subprocess.run(['venv\Scripts\python', 'logic\websocket_message_service.py', text])
+      process = subprocess.Popen(['venv\Scripts\python', 'logic\websocket_message_service.py'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+      stdout, stderr = process.communicate(input=text)
 
 
   def start_recording(self):
