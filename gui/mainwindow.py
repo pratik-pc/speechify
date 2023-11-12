@@ -2,12 +2,15 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout
 from logic.audiorecorder import AudioRecorder
 from .record_button import Button
 from .dropdown import Dropdown
+from logic.hotkey import Hotkey
 
 
 class MainWindow(QWidget):
   def __init__(self):
     super().__init__()
     self.audiorec = AudioRecorder(self)
+    self.hotkey_listener = Hotkey(self.audiorec)
+    self.hotkey_listener.start()
     self.initUI()
 
   
@@ -20,3 +23,8 @@ class MainWindow(QWidget):
     layout.addWidget(self.dropdown)
     layout.addWidget(self.button)
     self.setLayout(layout)
+
+
+  def closeEvent(self, event):
+    self.hotkey_listener.stop()
+    event.accept()
