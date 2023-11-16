@@ -23,3 +23,6 @@ class Hotkey(threading.Thread):
 
   def stop(self):
     self.key_listener.stop()
+
+  def set_hotkey(self, key):
+    self.key = keyboard.KeyCode.from_char(key)
