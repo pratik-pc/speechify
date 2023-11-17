@@ -1,6 +1,6 @@
 # Speechify Desktop App
 
-Desktop application for Speechify available for Windows using Python
+Desktop application for [Speechify](https://github.com/pratik-pc/speechify-backend) available for Windows using Python
 
 ## App features
 
@@ -18,3 +18,11 @@ Integration with Discord allowing users to stream translated audio to discord vo
 2. Run `pip install -r requirements.txt` in root directory to install dependencies
 3. Start Speechify GUI
   - Run `python main.py` in root directory
+
+## Related Repo
+
+[Speechify](https://github.com/pratik-pc/speechify-backend)
+
+## Need help?
+
+Get in touch with me @ [twitter](https://twitter.com/) or [linkedin](https://linkedin.com/in/pratik-chanda)
