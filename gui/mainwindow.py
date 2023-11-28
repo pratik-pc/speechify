@@ -17,6 +17,7 @@ class MainWindow(QWidget):
   def initUI(self):
     self.setWindowTitle('Speechify')
     self.setGeometry(100, 100, 300, 150)
+    self.setFixedSize(300, 150)
     self.button = Button(self.audiorec, self)
     self.push_button = PushButton(self.hotkey_listener)
     self.dropdown = Dropdown(self.audiorec, self)
