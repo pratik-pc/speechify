@@ -1,5 +1,8 @@
 import requests
 import asyncio
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 async def transcribe(language):
   loop = asyncio.get_event_loop()
@@ -8,6 +11,7 @@ async def transcribe(language):
 
   data = {
       'language': language,
+      'user_id': os.getenv('user_id')
   }
   files = {
      'audio': None
