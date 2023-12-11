@@ -1,7 +1,5 @@
 from logic.record import Record
 from api.transcribe_api import transcribe
-from logic.speech import speech
-import subprocess
 import asyncio
 from asyncqt import QEventLoop
 
@@ -41,6 +39,4 @@ class AudioRecorder():
 
   async def call_api(self):
     text = await transcribe(self.language_code)
-    process = subprocess.Popen(['venv\Scripts\python', 'logic\websocket_message_service.py'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
-    stdout, stderr = process.communicate(input=text)
     return True
